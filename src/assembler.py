@@ -1,4 +1,4 @@
-from string_composition import stringComposition
+from make_composition import stringComposition
 
 def main():
     k = 3
