@@ -1,5 +1,5 @@
 class Assembler:
-    def __init__(self, kMers):
+    def __init__(self, kMers: str):
         self.kMersList = kMers.split(",")
         self.nodesDict = self.makeNodeDict()
         self.adjacencyMatrix = self.makeAdjacencyMatrix()
@@ -32,3 +32,21 @@ class Assembler:
             adjacencyMatrix[self.nodesDict[prefix]][self.nodesDict[suffix]] += 1
 
         return adjacencyMatrix
+
+
+def main():
+    inputFileName = input('Enter the input file name: ')
+
+    with open(inputFileName, 'r') as file:
+        composition = file.readline().strip() #! Take off the leading and trailing whitespaces
+
+    asm = Assembler(composition)
+    
+    print("Adjacency Matrix:")
+    print('  ' + ' '.join(node for node in asm.nodesDict))
+    for node in asm.nodesDict:
+        print(node + ' ' + ' '.join(str(asm.adjacencyMatrix[asm.nodesDict[node]][i]) for i in range(len(asm.nodesDict))))
+
+
+if __name__ == '__main__':
+    main()
