@@ -16,8 +16,6 @@ def isStartNode(nodeIndex):
         inDegree += adjacencyMatrix[i][nodeIndex]
         outDegree += adjacencyMatrix[nodeIndex][i]
 
-        print(f"Node {nodeIndex + 1}: in-degree = {inDegree}, out-degree = {outDegree}")
-
     return inDegree+1 == outDegree # if the node is a start node, the in-degree should be equal to out-degree + 1
 
 def findStartNode():
@@ -25,15 +23,7 @@ def findStartNode():
         if isStartNode(i):
             return i
         
-        else:
-            raise Exception("There is no start node")
-
-def haveOutgoingEdges(nodeIndex):
-    for i in range(len(adjacencyMatrix)):
-        if adjacencyMatrix[nodeIndex][i] > 0: # if there are outgoing edges
-            return True
-    
-    return False # if there are no outgoing edges                   
+    raise Exception("There is no start node")                  
         
 def findEulerianPath(adjacencyMatrix):
     eulerianPath = []
@@ -50,6 +40,6 @@ def findEulerianPath(adjacencyMatrix):
         else:
             eulerianPath.append(stack.pop()) # if there are no outgoing edges, add the top node to the eulerian path
 
-    return eulerianPath
+    return eulerianPath[::-1] # return the eulerian path in reverse order
 
 print(findEulerianPath(adjacencyMatrix)) # Expected output: [0, 1, 2, 1, 3, 4]
