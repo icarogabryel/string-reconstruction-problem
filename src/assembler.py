@@ -79,7 +79,7 @@ class Assembler:
 
         reconstructedString = reconstructedString[:-1] + nodeList[eulerianPath[-1]]
 
-        return reconstructedString     
+        return reconstructedString
 
 
 def main():
@@ -90,15 +90,15 @@ def main():
 
     asm = Assembler(composition)
     
-    print("Adjacency Matrix:")
-    print('  ' + ' '.join(node for node in asm.nodesDict))
+    # print("Adjacency Matrix:")
+    # print('  ' + ' '.join(node for node in asm.nodesDict))
     
-    for node in asm.nodesDict:
-        print(node + ' ' + ' '.join(str(asm.adjacencyMatrix[asm.nodesDict[node]][i]) for i in range(len(asm.nodesDict))))
+    # for node in asm.nodesDict:
+    #     print(node + ' ' + ' '.join(str(asm.adjacencyMatrix[asm.nodesDict[node]][i]) for i in range(len(asm.nodesDict))))
 
     print('DNA Reconstruction:')
     
-    with open('output.txt', 'w') as file:
+    with open('../test/output.txt', 'w') as file:
         file.write(asm.reconstructString())
 
 

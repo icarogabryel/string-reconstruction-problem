@@ -11,4 +11,4 @@ def makeDNA(length):
 
 if __name__ == "__main__":
     with open('../test/dna.txt', 'w') as file:
-        file.write(makeDNA(30000))
+        file.write(makeDNA(8000))
