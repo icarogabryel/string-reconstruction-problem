@@ -83,7 +83,7 @@ class Assembler:
 
 
 def main():
-    inputFileName = input('Enter the input file name: ')
+    inputFileName = '../test/dna_sequel_30_5mer.txt'
 
     with open(inputFileName, 'r') as file:
         composition = file.readline().strip() #! Take off the leading and trailing whitespaces
@@ -98,7 +98,7 @@ def main():
 
     print('DNA Reconstruction:')
     
-    with open('../test/output.txt', 'w') as file:
+    with open('../test/output_30.txt', 'w') as file:
         file.write(asm.reconstructString())
 
 

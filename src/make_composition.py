@@ -7,9 +7,9 @@ def makeStringComposition(string, k):
     return sorted(kmersList)
 
 def main():
-    inputFileName = input('Enter the input file name: ')
-    k = int(input('Enter the value of k: '))
-    outputFileName = input('Enter the output file name: ')
+    inputFileName = '../test/30k_dna_sequel.txt'
+    k = int('15')
+    outputFileName = '../test/30k_dna_sequel_15mer_composition.txt'
 
     with open(inputFileName, 'r') as file:
         text = file.readline().strip()
