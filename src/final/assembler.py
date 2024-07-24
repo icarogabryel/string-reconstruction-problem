@@ -69,14 +69,14 @@ class Assembler:
 
 
 def main():
-    inputFileName = '../test/30k_dna_sequel_15mer_composition.txt'
+    inputFileName = '../test/100k_dna_sequel_20mer_composition.txt'
 
     with open(inputFileName, 'r') as file:
         composition = file.readline()
 
     asm = Assembler(composition)
       
-    with open('../test/30k_output.txt', 'w') as file:
+    with open('IcaroSilva.txt', 'w') as file:
         file.write(asm.reconstructString())
 
 
