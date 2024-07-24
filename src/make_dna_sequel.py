@@ -10,5 +10,5 @@ def makeDNA(length):
     return dna
 
 if __name__ == "__main__":
-    with open('final/30k_dna_sequel.txt', 'w') as file:
+    with open('final/dna_sequel.txt', 'w') as file:
         file.write(makeDNA(30000))

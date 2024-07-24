@@ -1,7 +1,7 @@
-with open('../test/100k_dna_sequel.txt', 'r') as file:
+with open('final/IcaroSilva.txt', 'r') as file:
     composition = file.readline()
 
-with open('../test/100k_output.txt', 'r') as file:
+with open('final/dna_sequel.txt', 'r') as file:
     expected = file.readline()
 
 def compare(composition, expected):

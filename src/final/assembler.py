@@ -69,8 +69,8 @@ class Assembler:
 
 
 def main():
-    inputFileName = '../test/100k_dna_sequel_20mer_composition.txt'
-
+    inputFileName = input('Enter the file name that contains a list of k-mers separated by commas: ')
+    
     with open(inputFileName, 'r') as file:
         composition = file.readline()
 
