@@ -66,19 +66,3 @@ class Assembler:
             reconstructedString += node[-1]
 
         return reconstructedString
-
-
-def main():
-    inputFileName = input('Enter the file name that contains a list of k-mers separated by commas: ')
-    
-    with open(inputFileName, 'r') as file:
-        composition = file.readline()
-
-    asm = Assembler(composition)
-      
-    with open('IcaroSilva.txt', 'w') as file:
-        file.write(asm.reconstructString())
-
-
-if __name__ == '__main__':
-    main()
